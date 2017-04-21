@@ -33,4 +33,8 @@ describe('String#check_anagrams') do
   it('ignores spaces and punctuation to determine if multiple-word inputs are palindromes') do
     expect('A Santa:'.check_anagrams('at Nasa!!')).to(eq('These words are anagrams AND palindromes! Neat.'))
   end
+
+  it('returns the letters that are shared by the inputs if they are not anagrams or antigrams') do
+    expect('whiskey'.check_anagrams('history')).to(eq('These words are not anagrams or antigrams. Booo. But 4 letters match: h i s y '))
+  end
 end

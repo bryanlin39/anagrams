@@ -6,7 +6,7 @@
 
 ## Description
 
-Anagram Checker is a web application that evaluates if two user-inputted strings are anagrams, palindromes, or antigrams. Access the webpage directly from https://bryanlin39.github.io/anagrams.
+Anagram Checker is a web application that evaluates if two user-inputted strings are anagrams, palindromes, or antigrams. Access the webpage directly from https://bryanlin39.github.io/anagrams or https://stark-reef-95483.herokuapp.com/.
 
 ## Setup/Installation Requirements
 
