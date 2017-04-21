@@ -1,10 +1,14 @@
 class String
   define_method(:check_palindromes) do |other_input|
-    input1 = self.downcase.split("")
-    input2 = other_input.downcase.split("").reverse
+    self_stripped = self.gsub(/[^\w]|_/, "")
+    input1 = self_stripped.downcase.split("")
+    other_input_stripped = other_input.gsub(/[^\w]|_/, "")
+    input2 = other_input_stripped.downcase.split("").reverse
+
     if input1 == input2
       true
     end
+
   end
 end
 
@@ -21,6 +25,7 @@ class String
         has_vowels = false
       end
     end
+
     has_vowels
   end
 end
@@ -32,8 +37,10 @@ class String
       return 'Please make sure all inputs are actual words'
     end
 
-    input1 = self.downcase.split("").sort
-    input2 = other_input.downcase.split("").sort
+    self_stripped = self.gsub(/[^\w]|_/, "")
+    input1 = self_stripped.downcase.split("").sort
+    other_input_stripped = other_input.gsub(/[^\w]|_/, "")
+    input2 = other_input_stripped.downcase.split("").sort
 
     if input1 == input2 && self.check_palindromes(other_input) == true
       'These words are anagrams AND palindromes'

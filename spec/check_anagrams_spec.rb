@@ -25,4 +25,12 @@ describe('String#check_anagrams') do
   it('checks if multiple-word inputs are all actual words with vowels') do
     expect('sdfjkl nonsense'.check_anagrams('cat')).to(eq('Please make sure all inputs are actual words'))
   end
+
+  it('ignores spaces and punctuation to determine if multiple-word inputs are anagrams') do
+    expect('A diet'.check_anagrams('I\'d eat')).to(eq('Yes, these words are anagrams'))
+  end
+
+  it('ignores spaces and punctuation to determine if multiple-word inputs are palindromes') do
+    expect('A Santa:'.check_anagrams('at Nasa!!')).to(eq('These words are anagrams AND palindromes'))
+  end
 end
