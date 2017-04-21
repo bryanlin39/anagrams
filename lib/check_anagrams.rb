@@ -1,28 +1,45 @@
 class String
-  define_method(:check_palindromes) do |other_word|
-    word1 = self.downcase.split("")
-    word2 = other_word.downcase.split("").reverse
-    if word1 == word2
+  define_method(:check_palindromes) do |other_input|
+    input1 = self.downcase.split("")
+    input2 = other_input.downcase.split("").reverse
+    if input1 == input2
       true
     end
   end
 end
 
-class String
-  define_method(:check_anagrams) do |other_word|
-    word1 = self.downcase.split("").sort
-    word2 = other_word.downcase.split("").sort
-    vowels = ['a','e','i','o','u','y']
 
-    if (word1 & vowels).empty? || (word2 & vowels).empty?
-      return 'Please enter actual words to compare'
+class String
+  define_method(:check_vowels) do
+    vowels = ['a','e','i','o','u','y']
+    input = self.downcase.split(" ")
+    has_vowels = true
+
+    input.each() do |word|
+      letters = word.split("")
+      if (letters & vowels).empty?
+        has_vowels = false
+      end
+    end
+    has_vowels
+  end
+end
+
+
+class String
+  define_method(:check_anagrams) do |other_input|
+    if self.check_vowels() == false || other_input.check_vowels() == false
+      return 'Please make sure all inputs are actual words'
     end
 
-    if word1 == word2 && self.check_palindromes(other_word) == true
+    input1 = self.downcase.split("").sort
+    input2 = other_input.downcase.split("").sort
+
+    if input1 == input2 && self.check_palindromes(other_input) == true
       'These words are anagrams AND palindromes'
-    elsif word1 == word2
+    elsif input1 == input2
       'Yes, these words are anagrams'
-    elsif (word1 & word2).empty?
+    elsif (input1 & input2).empty?
       'These words are actually antigrams'
     else
       'No, these words are not anagrams'
