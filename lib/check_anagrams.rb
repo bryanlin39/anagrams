@@ -49,7 +49,7 @@ class String
     elsif (input1 & input2).empty?
       'These words are actually antigrams'
     else
-      'No, these words are not anagrams'
+      'No, these words are not related'
     end
 
   end
