@@ -34,7 +34,7 @@ end
 class String
   define_method(:check_anagrams) do |other_input|
     if self.check_vowels() == false || other_input.check_vowels() == false
-      return 'Please make sure all inputs are actual words'
+      return 'Please make sure all inputs are actual words.'
     end
 
     self_stripped = self.gsub(/[^\w]|_/, "")
@@ -43,13 +43,13 @@ class String
     input2 = other_input_stripped.downcase.split("").sort
 
     if input1 == input2 && self.check_palindromes(other_input) == true
-      'These words are anagrams AND palindromes'
+      'These words are anagrams AND palindromes! Neat.'
     elsif input1 == input2
-      'Yes, these words are anagrams'
+      'These words are anagrams! Cool.'
     elsif (input1 & input2).empty?
-      'These words are actually antigrams'
+      'These words are actually antigrams. Whoa.'
     else
-      'No, these words are not related'
+      'These words are not related. Booo.'
     end
 
   end
