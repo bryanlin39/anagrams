@@ -1,19 +1,11 @@
 class String
   define_method(:check_anagrams) do |other_word|
-    word1 = self.split("")
-    word2 = other_word.split("")
-    are_anagrams = true
+    word1 = self.downcase.split("").sort
+    word2 = other_word.downcase.split("").sort
+    are_anagrams = false
 
-    word1.each() do |letter|
-      if word2.include?(letter)
-        word2.delete(letter)
-      else
-        are_anagrams = false
-      end
-    end
-
-    if word2.empty? == false
-      are_anagrams = false
+    if word1 == word2
+      are_anagrams = true
     end
 
     if are_anagrams == true
