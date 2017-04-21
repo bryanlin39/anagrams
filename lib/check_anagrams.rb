@@ -66,6 +66,6 @@ class String
     else
       'These words are not anagrams or antigrams. Booo. But ' + self.check_number_of_matches(other_input)[0] + ' letters match: ' + self.check_number_of_matches(other_input)[1]
     end
-
   end
+
 end
