@@ -22,6 +22,8 @@ class String
       'These words are anagrams AND palindromes'
     elsif word1 == word2
       'Yes, these words are anagrams'
+    elsif (word1 & word2).empty?
+      'These words are actually antigrams'
     else
       'No, these words are not anagrams'
     end

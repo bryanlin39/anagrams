@@ -17,4 +17,8 @@ describe('String#check_anagrams') do
   it('checks if inputs are actual words with at least one vowel') do
     expect('bcdf'.check_anagrams('dfbc')).to(eq('Please enter actual words to compare'))
   end
+
+  it('checks if words that are not anagrams are antigrams') do
+    expect('ruby'.check_anagrams('steak')).to(eq('These words are actually antigrams'))
+  end
 end
